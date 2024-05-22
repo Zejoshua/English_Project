@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+        <meta charset="UTF-8">
+        <title>Edit Adjective</title>
+</head>
+<body>
+<h2>Edit Adjective</h2>
+<form action="#" th:action="@{/edit}" th:object="${adjective}" method="post">
+    <input type="hidden" th:field="${id}">
+    <p>
+        Adjective: <input type="text" th:field="${adjective}">
+    </p>
+    <p>
+        Comparative: <input type="text" th:field="${comparative}">
+    </p>
+    <p>
+        Superlative: <input type="text" th:field="${superlative}">
+    </p>
+    <p>
+        Example Comparative: <input type="text" th:field="${exampleComparative}">
+    </p>
+    <p>
+        Example Superlative: <input type="text" th:field="${exampleSuperlative}">
+    </p>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

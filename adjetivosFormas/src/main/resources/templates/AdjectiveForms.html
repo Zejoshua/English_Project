@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Adjective</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+</head>
+<body>
+<div class="container">
+    <h2>Search of Adjective </h2>
+    <form action="/AdjectiveForms" method="get">
+        <label for="letra" class="col-form-label">Type the adjective:</label>
+        <input type="text" id="letra" name="letra"  class="form-control" aria-describedby="passwordHelpInline">
+        <button type="submit" class="btn btn-outline-secondary">Search</button>
+    </form>
+    <hgroup>
+        <p>Links </p>
+        <a type="button" class="btn btn-outline-primary" href="/">Homepage</a>
+    </hgroup>
+
+    <table class="table table-secondary" >
+
+        <thead class="table-dark">
+        <tr>
+            <th>Adjective</th>
+            <th>Comparative</th>
+            <th>Superlative</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="adjective: ${List}">
+            <td th:text="${adjective.adjective}"></td>
+            <td th:text="${adjective.comparative}"></td>
+            <td th:text="${adjective.superlative}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <p>Examples:</p>
+        <button type="button" class="btn btn-outline-primary" onclick="mostrarAlerta('alert1')">Example Comparative</button>
+        <button type="button" class="btn btn-outline-danger" onclick="mostrarAlerta('alert2')">Example Superlative</button>
+    </div>
+    <p></p>
+    <div id="alert1" class="alert alert-primary" role="alert" style="display: none;">
+        Example Comparative: <span th:text="${comparative}"></span>
+    </div>
+    <div id="alert2" class="alert alert-danger" role="alert" style="display: none;">
+        Example Superlative: <span th:text="${superlative}"></span>
+    </div>
+
+</div>
+<script>
+    function mostrarAlerta(alertId) {
+        var alerta = document.getElementById(alertId);
+        if (alerta.style.display === "none") {
+            alerta.style.display = "block";
+        } else {
+            alerta.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

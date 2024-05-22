@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Of Adjectives</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+</head>
+
+<body>
+<div class="container">
+    <h2>List</h2>
+    <table class="table table-secondary" >
+        <hgroup>
+            <p>Links </p>
+            <a type="button" class="btn btn-outline-primary" href="/">Homepage</a>
+        </hgroup>
+
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Adjective</th>
+            <th>Comparative</th>
+            <th>Superlative</th>
+            <th>Example Comparative</th>
+            <th>Example Superlative</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="adjective: ${List}">
+            <td th:text="${adjective.id}"></td>
+            <td th:text="${adjective.adjective}"></td>
+            <td th:text="${adjective.comparative}"></td>
+            <td th:text="${adjective.superlative}"></td>
+            <td th:text="${adjective.exampleComparative}"></td>
+            <td th:text="${adjective.exampleSuperlative}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

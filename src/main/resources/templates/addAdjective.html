@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Adjective</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Add a New Adjective</h1>
+    <form th:action="@{/add}" th:object="${adjective}" method="post">
+        <div class="mb-3">
+            <label for="adjective" class="form-label">Adjective</label>
+            <input type="text" class="form-control" id="adjective" th:field="*{adjective}">
+        </div>
+        <div class="mb-3">
+            <label for="comparative" class="form-label">Comparative</label>
+            <input type="text" class="form-control" id="comparative" th:field="*{comparative}">
+        </div>
+        <div class="mb-3">
+            <label for="superlative" class="form-label">Superlative</label>
+            <input type="text" class="form-control" id="superlative" th:field="*{superlative}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleComparative" class="form-label">Example Comparative</label>
+            <input type="text" class="form-control" id="exampleComparative" th:field="*{exampleComparative}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleSuperlative" class="form-label">Example Superlative</label>
+            <input type="text" class="form-control" id="exampleSuperlative" th:field="*{exampleSuperlative}">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Adjective</button>
+    </form>
+</div>
+</body>
+</html>
